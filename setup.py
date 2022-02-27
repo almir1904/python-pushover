@@ -13,8 +13,8 @@ setup(
     + "\n"
     + open("CHANGES.rst").read(),
     url="https://github.com/almir1904/python-pushover",
-    py_modules=["pushover", "cli"],
-    entry_points={"console_scripts": ["pushover = cli:main"]},
+    packages=["pushover"],
+    entry_points={"console_scripts": ["pushover = pushover.cli:main"]},
     install_requires=["requests>=1.0"],
     license="GNU GPLv3",
 )
