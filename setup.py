@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name="python-pushover",
-    version="1.0",
+    version="1.1",
     description="Comprehensive bindings and command line utility for the "
     "Pushover notification service",
     long_description=open("README.rst").read()
@@ -12,12 +12,9 @@ setup(
     + open("AUTHORS.rst").read()
     + "\n"
     + open("CHANGES.rst").read(),
-    url="https://github.com/Thibauth/python-pushover",
-    author="Thibaut Horel",
-    author_email="thibaut.horel+pushover@gmail.com",
+    url="https://github.com/almir1904/python-pushover",
     py_modules=["pushover", "cli"],
     entry_points={"console_scripts": ["pushover = cli:main"]},
     install_requires=["requests>=1.0"],
-    use_2to3=True,
     license="GNU GPLv3",
 )
