@@ -1,4 +1,4 @@
-from ConfigParser import RawConfigParser, NoSectionError, NoOptionError
+from configparser import RawConfigParser, NoSectionError, NoOptionError
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 import os
 from pushover import Pushover
