@@ -89,7 +89,7 @@ There is NO WARRANTY, to the extent permitted by law.""",
         user_key = args.user
         device = None
     if args.sound is None:
-        sound = "default"
+        args.sound = "default"
     else:
         sound = args.sound
     token = args.token or params["token"]
@@ -105,7 +105,7 @@ There is NO WARRANTY, to the extent permitted by law.""",
         timestamp=True,
         retry=args.retry,
         expire=args.expire,
-        sound=sound,
+        sound=args.sound,
     )
 
 
