@@ -88,6 +88,8 @@ There is NO WARRANTY, to the extent permitted by law.""",
     else:
         user_key = args.user
         device = None
+    if args.sound is None:
+        sound = "default"
     token = args.token or params["token"]
 
     Pushover(token).message(
