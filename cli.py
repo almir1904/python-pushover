@@ -49,6 +49,7 @@ For more details and bug reports, see: https://github.com/Thibauth/python-pushov
     parser.add_argument("--url", help="additional url")
     parser.add_argument("--url-title", help="url title")
     parser.add_argument("--title", "-t", help="message title")
+    parser.add_argument("--sound", "-s", help="Set Sound")
     parser.add_argument(
         "--priority", "-p", help="notification priority (-1, 0, 1 or 2)", type=int
     )
@@ -100,6 +101,7 @@ There is NO WARRANTY, to the extent permitted by law.""",
         timestamp=True,
         retry=args.retry,
         expire=args.expire,
+        sound=args.sound,
     )
 
 
