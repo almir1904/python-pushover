@@ -105,7 +105,7 @@ There is NO WARRANTY, to the extent permitted by law.""",
         timestamp=True,
         retry=args.retry,
         expire=args.expire,
-        sound,
+        sound=sound,
     )
 
 
