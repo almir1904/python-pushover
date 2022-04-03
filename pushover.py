@@ -1,4 +1,4 @@
-# pushover 1.0
+# pushover 1.2
 #
 # Copyright (C) 2013-2018  Thibaut Horel <thibaut.horel@gmail.com>
 
