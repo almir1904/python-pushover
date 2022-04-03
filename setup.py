@@ -5,7 +5,7 @@ from setuptools import setup
 long_description = "\n".join([open(f).read() for f in ("README.rst", "AUTHORS.rst", "CHANGES.rst")])
 setup(
     name="python-pushover",
-    version="1.1",
+    version="1.2",
     description="Comprehensive bindings and command line utility for the "
     "Pushover notification service",
     long_description=long_description,
