@@ -90,6 +90,8 @@ There is NO WARRANTY, to the extent permitted by law.""",
         device = None
     if args.sound is None:
         sound = "default"
+    else:
+        sound = args.sound
     token = args.token or params["token"]
 
     Pushover(token).message(
@@ -103,7 +105,7 @@ There is NO WARRANTY, to the extent permitted by law.""",
         timestamp=True,
         retry=args.retry,
         expire=args.expire,
-        sound=args.sound,
+        sound,
     )
 
 
