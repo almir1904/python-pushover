@@ -17,7 +17,7 @@ Or you can install it directly from GitHub_:
 
 .. code-block:: bash
 
-    git clone https://github.com/Thibauth/python-pushover.git
+    git clone https://github.com/almir1904/python-pushover.git
     cd python-pushover
     pip install .
 
