@@ -1,8 +1,4 @@
-try:
-    import configparser
-except ImportError:  # Python 2
-    import ConfigParser as configparser
-
+from configparser import RawConfigParser, NoSectionError, NoOptionError
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 import os
 from pushover import Pushover
@@ -10,7 +6,7 @@ from pushover import Pushover
 
 def read_config(config_path):
     config_path = os.path.expanduser(config_path)
-    config = configparser.RawConfigParser()
+    config = RawConfigParser()
     params = {"users": {}}
     files = config.read(config_path)
     if not files:
@@ -22,7 +18,7 @@ def read_config(config_path):
             user["user_key"] = config.get(name, "user_key")
             try:
                 user["device"] = config.get(name, "device")
-            except configparser.NoOptionError:
+            except NoOptionError:
                 user["device"] = None
             params["users"][name] = user
     return params
@@ -53,6 +49,7 @@ For more details and bug reports, see: https://github.com/Thibauth/python-pushov
     parser.add_argument("--url", help="additional url")
     parser.add_argument("--url-title", help="url title")
     parser.add_argument("--title", "-t", help="message title")
+    parser.add_argument("--sound", "-s", help="Set Sound")
     parser.add_argument(
         "--priority", "-p", help="notification priority (-1, 0, 1 or 2)", type=int
     )
@@ -91,6 +88,8 @@ There is NO WARRANTY, to the extent permitted by law.""",
     else:
         user_key = args.user
         device = None
+    if args.sound is None:
+        sound = "default"
     token = args.token or params["token"]
 
     Pushover(token).message(
@@ -104,6 +103,7 @@ There is NO WARRANTY, to the extent permitted by law.""",
         timestamp=True,
         retry=args.retry,
         expire=args.expire,
+        sound=args.sound,
     )
 
 
